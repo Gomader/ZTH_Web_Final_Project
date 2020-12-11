@@ -1,0 +1,105 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+button{
+	height: 40px;
+	background: rgba(0,0,0,0);
+	border: 1px solid rgb(168,168,168);
+	border-radius: 20px;
+	font-size: 15px;
+	font-weight: bolder;
+}
+
+#topbar{
+	width: 100%;
+	height: 57px;
+	box-shadow: 0 10px 10px grey;
+}
+
+#logo{
+	font-size: 27px;
+	color: rgb(25,46,89);
+	margin-left: 20%;
+	line-height: 57px;
+	font-weight: bolder;
+}
+
+#bigboxmenu{
+	width: 60%;
+	margin: 100px auto;
+}
+
+.menubox{
+	width: 49%;
+	float: left;
+}
+
+.leftbox{
+	background: #4c5ced;
+	text-align: center;
+	padding-top: 245px;
+	box-shadow: 10px 10px 10px grey;
+}
+
+.leftbox span{
+	color: white;
+	font-family: terminal;
+}
+
+.rightbox span:nth-of-type(1),
+.leftbox span:nth-of-type(1){
+	font-size: 26px;
+	font-weight: bolder;
+}
+
+.rightbox span:nth-of-type(2),
+.leftbox span:nth-of-type(2){
+	font-size: 18px;
+	font-weight: lighter;
+}
+
+.leftbox button{
+	color: #FFFFFF;
+	margin-bottom: 238px;
+	width: 200px;
+}
+
+.leftbox button:hover{
+	color: #4c5ced;
+	background: #FFFFFF;
+}
+
+.rightbox{
+	text-align: center;
+	padding-top: 245px;
+	box-shadow: 10px 10px 10px grey;
+}
+
+.rightbox span{
+	color: #000000;
+	font-family: terminal;
+}
+
+.rightbox button{
+	width: 200px;
+	margin-bottom: 238px;
+}
+
+.rightbox button:hover{
+	color: #FFFFFF;
+	background: #000000;
+}
+
+#footer{
+	width: 100%;
+	bottom: 0;
+	height: 50px;
+	font-size: 15px;
+	text-align: center;
+	line-height: 50px;
+	color: #FFFFFF;
+	background: #05274c;
+	position: fixed;
+}
