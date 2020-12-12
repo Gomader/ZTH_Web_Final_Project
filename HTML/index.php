@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<title>SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</title>
-		<link rel="stylesheet" href="style/index.css">
+		<link rel="stylesheet" href="style/style.css">
 		<?php
 			session_start();
 			if(isset($_SESSION["type"])){
