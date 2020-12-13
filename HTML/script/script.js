@@ -108,7 +108,7 @@ function login(){
 	}
 	var id = document.getElementById("ID").value;
 	var password = document.getElementById("password").value;
-	if(username==""){
+	if(id==""){
 		alert("Please input your ID!")
 	}else if(password==""){
 		alert("Please input your password!");
@@ -120,6 +120,7 @@ function login(){
 		xhr.onreadystatechange = function(){
 			if(xhr.readyState===4){
 				if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
+					console.log(xhr.responseText);
 					if(xhr.responseText == "1"){
 						alert("Log In Succeed!");
 						window.location.href = logined;

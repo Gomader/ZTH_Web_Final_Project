@@ -17,7 +17,7 @@ $userInfo = $conn->query($query);
 if($userInfo->num_rows > 0){
 	$lifeTime = 1800;
 	setcookie(session_name(),session_id(), time()+$lifeTime);
-	while($row = $userInfo->fetch_assoc){
+	while($row = $userInfo->fetch_assoc()){
 		$_SESSION["id"] = $row["id"];		
 	}
 	$_SESSION["username"] = $username;

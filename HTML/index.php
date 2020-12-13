@@ -7,7 +7,7 @@
 		<?php
 			session_start();
 			if(isset($_SESSION["type"])){
-				echo "<meta http-equiv='refresh' content='1;url=" + $_SESSION["type"] + ".php'>";
+				echo "<meta http-equiv='refresh' content='1;url=".$_SESSION["type"].".php'>";
 			}
 		?>
 	</head>

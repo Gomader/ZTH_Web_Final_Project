@@ -7,8 +7,8 @@
 		<?php
 			session_start();
 			if(isset($_SESSION["type"])&&$_SESSION["type"]!="admin"){
-				echo "<meta http-equiv='refresh' content='1;url=" + $_SESSION["type"] + ".php'>";
-			}else{
+				echo "<meta http-equiv='refresh' content='1;url=".$_SESSION["type"].".php'>";
+			}elseif(!isset($_SESSION["type"])){
 				echo "<meta http-equiv='refresh' content='1;url=index.php'>";
 			}
 		?>
@@ -16,7 +16,8 @@
 	<body>
 		<div id="topbar">
 			<span id="logo">SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</span>
-			<span></span>
+			<span>Welcome Back Administrator!</span>
+			<button>Sign Out</button>
 		</div>
 		
 		<div id="footer">
