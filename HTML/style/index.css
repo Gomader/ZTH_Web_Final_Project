@@ -1,0 +1,58 @@
+.leftbox{
+	background: #4c5ced;
+	text-align: center;
+}
+
+.leftbox span{
+	color: white;
+	font-family: terminal;
+	position: relative;
+}
+
+.rightbox span:nth-of-type(1),
+.leftbox span:nth-of-type(1){
+	font-size: 26px;
+	font-weight: bolder;
+	top:200px;
+}
+
+.rightbox span:nth-of-type(2),
+.leftbox span:nth-of-type(2){
+	font-size: 18px;
+	font-weight: lighter;
+	top:200px;
+}
+
+.leftbox button{
+	color: #FFFFFF;
+	width: 200px;
+	position: relative;
+	top:250px;
+}
+
+.leftbox button:hover{
+	color: #4c5ced;
+	background: #FFFFFF;
+}
+
+.rightbox{
+	text-align: center;
+	box-shadow: 10px 10px 10px whitesmoke;
+}
+
+.rightbox span{
+	color: #000000;
+	font-family: terminal;
+	position: relative;
+}
+
+.rightbox button{
+	width: 200px;
+	position: relative;
+	top:250px
+}
+
+.rightbox button:hover{
+	color: #FFFFFF;
+	background: #000000;
+}

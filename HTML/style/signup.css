@@ -1,0 +1,106 @@
+.leftbox{
+	background: #4c5ced;
+	text-align: center;
+}
+
+.leftbox span{
+	color: white;
+	font-family: terminal;
+	position: relative;
+}
+
+.leftbox span:nth-of-type(1){
+	top: 200px;
+	font-size: 26px;
+	font-weight: bolder;
+}
+
+.leftbox span:nth-of-type(2){
+	top:200px;
+	font-size: 18px;
+	font-weight: lighter;
+}
+
+.leftbox button{
+	position: relative;
+	top: 250px;
+	color: #FFFFFF;
+	width: 200px;
+}
+
+.leftbox button:hover{
+	color: #4c5ced;
+	background: #FFFFFF;
+}
+
+.rightbox{
+	text-align: center;
+	box-shadow: 10px 10px 10px whitesmoke;
+}
+
+.rightbox span:nth-of-type(1){
+	position: relative;
+	top:50px;
+	font-family: nina;
+	font-size: 21px;
+	color: #000000;
+}
+
+#ID{
+	width: 274px;
+	height: 25px;
+	border: none;
+	border-bottom: 1px solid rgb(168,168,168);
+	font-size: 15px;
+	position: relative;
+	top:70px;
+}
+
+#checkid{
+	border-radius: 0;
+	margin-top: 16px;
+	font-weight: bold;
+	position: relative;
+	top:70px;
+}
+
+#typeB,
+#s,
+#b,
+#typeS{
+	position: relative;
+	top: 70px;
+	font-size: 16px;
+	margin-left: 5px;
+}
+
+#password,
+#repassword,
+#email{
+	width: 358px;
+	height: 25px;
+	border: none;
+	border-bottom: 1px solid rgb(168,168,168);
+	font-size: 15px;
+	margin-top: 30px;
+	position: relative;
+	top:50px;
+}
+
+#submit{
+	width: 358px;
+	background-color: #c5312d;
+	border-radius: 0;
+	border: none;
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bolder;
+	margin-top: 40px;
+	position: relative;
+	top:70px;
+}
+
+#state{
+	position: relative;
+	top:70px
+}

@@ -1,0 +1,81 @@
+.leftbox{
+	background: #4c5ced;
+	text-align: center;
+}
+
+.leftbox span{
+	color: white;
+	font-family: terminal;
+	position: relative;
+}
+
+.leftbox span:nth-of-type(1){
+	font-size: 26px;
+	font-weight: bolder;
+	top:200px;
+}
+
+.leftbox span:nth-of-type(2){
+	font-size: 18px;
+	font-weight: lighter;
+	top:200px;
+}
+
+.leftbox button{
+	color: #FFFFFF;
+	width: 200px;
+	position: relative;
+	top:250px;
+}
+
+.leftbox button:hover{
+	color: #4c5ced;
+	background: #FFFFFF;
+}
+
+.rightbox{
+	box-shadow: 10px 10px 10px whitesmoke;
+	text-align: center;
+}
+
+.rightbox span:nth-of-type(1){
+	font-size: 21px;
+	font-family: terminal;
+	position: relative;
+	top: 103px;
+}
+
+#typeB,
+#s,
+#b,
+#typeS{
+	font-size: 16px;
+	margin-left: 5px;
+	position: relative;
+	top: 190px;
+}
+
+#ID,
+#password{
+	width: 358px;
+	height: 25px;
+	border: none;
+	border-bottom: 1px solid rgb(168,168,168);
+	font-size: 15px;
+	margin-top: 30px;
+	position: relative;
+	top:200px;
+}
+
+#submit{
+	width: 358px;
+	background-color: #384aec;
+	border-radius: 20px;
+	border: none;
+	color: #FFFFFF;
+	font-size: 13px;
+	font-weight: bolder;
+	margin-top: 40px;
+	position: relative;
+	top:300px;
+}
