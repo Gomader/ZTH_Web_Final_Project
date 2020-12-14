@@ -120,7 +120,6 @@ function login(){
 		xhr.onreadystatechange = function(){
 			if(xhr.readyState===4){
 				if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
-					console.log(xhr.responseText);
 					if(xhr.responseText == "1"){
 						alert("Log In Succeed!");
 						window.location.href = logined;
@@ -131,4 +130,31 @@ function login(){
 			}
 		}
 	}
+}
+
+
+function deleteuser(id){
+	if(confirm("Are you Sure???")){
+		var xhr = new XMLHttpRequest();
+		xhr.open("POST","php/deleteuser.php",true);
+		xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+		xhr.send("id="+id);
+		xhr.onreadystatechange = function(){
+			if(xhr.readyState===4){
+				if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
+					if(xhr.responseText=="1"){
+						alert("Delete Succeed!");
+						document.getElementById("id"+id).style.display = "none";
+					}else{
+						alert("Something Wrong!");
+					}
+				}
+			}
+		}
+	}
+}
+
+
+function saveChange(){
+	
 }

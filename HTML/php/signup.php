@@ -14,7 +14,7 @@ if(isset($_POST['dup'])){
 	}
 }else{
 	$username = $_POST["id"];
-	$password = md5($_POST["password"]);
+	$password = $_POST["password"];
 	$type = $_POST["type"];
 	$email = $_POST["email"];
 	$query = "insert into user(username,password,email,type) value('$username','$password','$email',$type);";
