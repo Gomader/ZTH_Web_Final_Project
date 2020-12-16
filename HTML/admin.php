@@ -18,13 +18,15 @@
 	</head>
 	<body>
 		<div id="topbar">
-			<span id="logo">SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</span>
-			<a>Administrator</a>
+			<a id="logo" href="index.php">SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</a>
+			<a><?php
+			echo $_SESSION["username"];
+			?></a>
 			<a href="php/logout.php"><button>Sign Out</button></a>
 		</div>
 		
 		<div id="memberTable">
-			<table rules="none">
+			<table rules="none" id="maintable">
 				<tr><th>Student ID(Name)</th><th>Password</th><th>E-mail</th><th>Buyer/Seller</th><th>Delete</th></tr>
 				<?php
 					require_once "admin/admin.php";
@@ -43,7 +45,8 @@
 							}elseif($row['type']=="2"){
 								$type = "buyer";
 							}
-							echo "<tr id='id".$row["id"]."'><td>".$row['username']."</td><td>".$row["password"]."</td><td>".$row['email']."</td><td>$type</td><td><button onclick='deleteuser(".$row['id'].")'>Delete</button></td></tr>";
+							$id = $row["id"];
+							echo '<tr id="id'.$id.'" name="items" data-text="'.$id.'"><td id="username'.$id.'" onclick="change(\'username'.$id.'\')">'.$row['username'].'</td><td id="password'.$id.'" onclick="change(\'password'.$id.'\')">'.$row["password"].'</td><td id="email'.$id.'" onclick="change(\'email'.$id.'\')">'.$row['email'].'</td><td id="type'.$id.'" onclick="change(\'type'.$id.'\')">'.$type.'</td><td><button onclick="deleteuser('.$row['id'].')">Delete</button></td></tr>';
 						}
 					}
 				?>

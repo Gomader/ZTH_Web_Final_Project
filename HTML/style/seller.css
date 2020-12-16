@@ -1,0 +1,72 @@
+.littlelabel{
+	font-size: 15px;
+	font-weight: 100;
+}
+
+.menubox{
+	position: absolute;
+	top:0;
+	height: 57px;
+	left: 45%;
+}
+
+.menubox a{
+	line-height: 57px;
+	font-size: 15px;
+	margin-right: 15%;
+}
+
+#addiv{
+	width: 100%;
+	height: 638px;
+}
+
+#addiv div:nth-child(1){
+	width: 40%;
+	height: 100%;
+	background: #384AEC;
+	float: left;
+}
+
+#addiv div:nth-child(2){
+	width: 60%;
+	height: 100%;
+	background:#f1f7f7;
+	float: left;
+	box-sizing: border-box;
+	padding-top: 200px;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+#addiv div:nth-child(2) span:nth-of-type(1){
+	font-size: 28px;
+	color: rgb(43,42,42);
+}
+
+#addiv div:nth-child(2) span:nth-of-type(2){
+	font-size: 47px;
+	color: #000000;
+	font-weight: bolder;
+}
+
+#addiv div:nth-child(2) span:nth-of-type(3){
+	font-size: 14px;
+	color: rgb(114,113,113);
+	font-weight: lighter;
+}
+
+#addiv div:nth-child(3){
+	position: absolute;
+	height: 560px;
+	width: 363px;
+	background: #c9dfea;
+	top: 168px;
+	left: 371px;
+}
+
+#addiv div:nth-child(3) img{
+	width: 371px;
+	margin-top: 150px;
+	margin-left: 10px;
+}

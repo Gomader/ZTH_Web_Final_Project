@@ -1,19 +1,21 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html lang="en">
 	<head>
 		<title>SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</title>
 		<link rel="stylesheet" href="style/style.css">
 		<link rel="stylesheet" href="style/index.css">
-		<?php
-			session_start();
-			if(isset($_SESSION["type"])){
-				echo "<meta http-equiv='refresh' content='1;url=".$_SESSION["type"].".php'>";
-			}
-		?>
 	</head>
 	<body>
 		<div id="topbar">
-			<span id="logo">SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</span>
+			<a id="logo" href="index.php">SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</a>
+			<?php
+			if(isset($_SESSION["type"])){
+				echo "<a href='".$_SESSION["type"].".php' style='margin-right: 1%';>".$_SESSION['username']."</a><a href='php/logout.php'><button>Sign Out</button></a>";
+			}
+			?>
 		</div>
 		<div id="bigboxmenu">
 			<div class="menubox leftbox">

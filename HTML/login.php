@@ -13,7 +13,7 @@
 	</head>
 	<body>
 		<div id="topbar">
-			<span id="logo">SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</span>
+			<a id="logo" href="index.php">SKKU&nbsp;&nbsp;FLEA&nbsp;&nbsp;MARKET</a>
 		</div>
 		<div id="bigboxmenu">
 			<div class="menubox leftbox">
