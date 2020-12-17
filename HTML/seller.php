@@ -29,6 +29,7 @@
 		if(!isset($_GET["turn"])){
 			echo "
 			<div id='addiv'>
+			<div></div>
 				<div>
 					<span>Fun Shopping</span><br>
 					<span>SKKU FLEA MARKET</span><br><br>

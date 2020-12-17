@@ -1,0 +1,217 @@
+.littlelabel{
+	font-size: 15px;
+	font-weight: 100;
+}
+
+.menubox{
+	position: absolute;
+	top:0;
+	height: 57px;
+	left: 45%;
+	width: 30%;
+}
+
+.menubox a{
+	line-height: 57px;
+	font-size: 15px;
+	margin-right: 13%;
+}
+
+#addiv{
+	width: 100%;
+	height: 638px;
+}
+
+#addiv div:nth-child(1){
+	width: 40%;
+	height: 100%;
+	background: #384AEC;
+	float: left;
+}
+
+#addiv div:nth-child(2){
+	width: 60%;
+	height: 100%;
+	background:#f1f7f7;
+	float: left;
+	box-sizing: border-box;
+	padding-top: 200px;
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+#addiv div:nth-child(2) span:nth-of-type(1){
+	font-size: 28px;
+	color: rgb(43,42,42);
+}
+
+#addiv div:nth-child(2) span:nth-of-type(2){
+	font-size: 47px;
+	color: #000000;
+	font-weight: bolder;
+}
+
+#addiv div:nth-child(2) span:nth-of-type(3){
+	font-size: 14px;
+	color: rgb(114,113,113);
+	font-weight: lighter;
+}
+
+#addiv div:nth-child(3){
+	position: absolute;
+	height: 560px;
+	width: 363px;
+	background: #c9dfea;
+	top: 168px;
+	left: 371px;
+}
+
+#addiv div:nth-child(3) img{
+	width: 371px;
+	margin-top: 150px;
+	margin-left: 10px;
+}
+
+#contentpage{
+	width: 60%;
+	margin: 200px auto;
+	display: grid;
+	grid-template-columns: 30% 30% 40%;
+	grid-column-gap: 20px;
+}
+
+#one{
+	font-family: terminal;
+}
+
+.title{
+	color: #000000;
+	font-size: 16px;
+}
+
+.inner{
+	font-size: 14px;
+	color: rgb(173,173,173);
+}
+
+#two input{
+	width: 100%;
+	border: none;
+	height: 50px;
+	font-size: 15px;
+	margin-bottom: 20px;
+	color: rgb(173,173,173);
+	background: #f2f3f7;
+}
+
+#three textarea{
+	border: none;
+	resize: none;
+	color: rgb(173,173,173);
+	background: #f2f3f7;
+}
+
+#abtn{
+	position: fixed;
+	bottom: 100px;
+	right: 20%;
+}
+
+.submit{
+	width: 150px;
+	height: 50px;
+	border-radius: 0;
+	background: #374ddd;
+	color: #FFFFFF;
+	font-size: 15px;
+}
+
+#searchbox{
+	width: 60%;
+	margin: 200px auto;
+	background: #f8f7ff;
+	border-radius: 10px;
+	box-shadow: 0 10px 10px whitesmoke;
+	padding: 20px;
+}
+
+#searchbox span{
+	font-size: 17px;
+	color: rgb(158,158,158);
+}
+
+#searchtype{
+	height: 30px;
+	width: 100px;
+}
+
+.search{
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	background: url(../image/search.png) center center;
+	background-size: 100% 100%;
+	margin-left: 200px;
+}
+
+#searchingSeller,
+#hightprice,
+#lowprice,
+#searchingName{
+	height: 40px;
+	width: 300px;
+}
+
+table{
+	margin-top:50px;
+	width:100%;
+}
+
+#searchingByPrice,
+#searchingBySeller{
+	display: none;
+}
+
+#searchingReasult{
+	width: 60%;
+	margin: 100px auto;
+	margin-bottom: 500px;
+}
+
+#searchingReasult table{
+	width: 100%;
+	text-align: left;
+	box-shadow: grey 0 0 10px;
+	border-radius: 10px;
+	line-height: 64px;
+}
+
+th{
+	background: #36304a;
+	color: #FFFFFF;
+	font-size: 20px;
+	padding-left: 10px;
+}
+
+#searchingReasult th:first-child{
+	border-radius: 10px 0 0 0;
+}
+
+#searchingReasult th:last-child{
+	border-radius: 0 10px 0 0;
+}
+
+#searchingReasult tr:nth-child(even){
+	background: #f8f7ff;
+}
+
+#searchingReasult tr:nth-child(odd){
+	background: #ffffff;
+}
+
+td{
+	padding-left: 10px;
+	color: rgb(158,158,158);
+	font-size: 17px;
+	font-weight: 100;
+}
