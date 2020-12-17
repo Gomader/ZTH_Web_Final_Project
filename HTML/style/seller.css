@@ -8,6 +8,7 @@
 	top:0;
 	height: 57px;
 	left: 45%;
+	width: 30%;
 }
 
 .menubox a{
@@ -69,4 +70,169 @@
 	width: 371px;
 	margin-top: 150px;
 	margin-left: 10px;
+}
+
+#uploadtable{
+	width: 50%;
+	margin: 100px auto;
+	height: 20px;
+	display: none;
+	margin-bottom: 500px;
+}
+
+#productImage{
+	width: 300px;
+	height: 300px;
+	border: 5px dashed #000000;
+	border-radius: 20px;
+	text-align: center;
+	float: left;
+}
+
+#productImage span{
+	position: relative;
+	top:120px;
+	font-size: 15px;
+	margin: 0 20px;
+	color: rgb(167,174,178);
+}
+
+#pic{
+	width: 310px;
+	height: 310px;
+	box-shadow: 0 10px 10px whitesmoke;
+	float:left;
+}
+
+#pic img{
+	width: 300px;
+	height: 300px;
+}
+
+#informationTable{
+	width: 60%;
+	float: left;
+	margin-left: 20px;
+}
+
+.inputstyle{
+	width: 90%;
+	height: 50px;
+	border: none;
+	font-size: 18px;
+	background: #f2f3f7;
+	color: rgb(167,174,178);
+	margin-bottom: 5px;
+	padding-left: 10px;
+}
+
+#endtime{
+	display: none;
+}
+
+#endtimeitem{
+	margin-left: 20px;
+}
+
+#flea,
+#auction{
+	margin-right: 20px;
+}
+
+.submit{
+	width: 150px;
+	height: 50px;
+	border-radius: 0;
+	background: #374ddd;
+	color: #FFFFFF;
+	font-size: 15px;
+}
+
+#productstatus{
+	width: 60%;
+	margin: 100px auto;
+}
+
+#productstatus table{
+	margin-top: 20px;
+	width: 100%;
+	text-align: left;
+	line-height: 64px;
+	box-shadow: grey 0 0 10px;
+	border-radius: 10px;
+}
+
+th{
+	background: #36304a;
+	color: #FFFFFF;
+	font-size: 20px;
+	padding-left: 10px;
+}
+
+#productstatus th:first-child{
+	border-radius: 10px 0 0 0;
+}
+
+#productstatus th:last-child{
+	border-radius: 0 10px 0 0;
+}
+
+#productstatus tr:nth-child(even){
+	background: #f8f7ff;
+}
+
+#productstatus tr:nth-child(odd){
+	background: #ffffff;
+}
+
+td{
+	padding-left: 10px;
+	color: rgb(158,158,158);
+	font-size: 17px;
+	font-weight: 100;
+}
+
+#contentpage{
+	width: 60%;
+	margin: 200px auto;
+	display: grid;
+	grid-template-columns: 30% 30% 40%;
+	grid-column-gap: 20px;
+}
+
+#one{
+	font-family: terminal;
+}
+
+.title{
+	color: #000000;
+	font-size: 16px;
+}
+
+.inner{
+	font-size: 14px;
+	color: rgb(173,173,173);
+}
+
+#two input{
+	width: 100%;
+	border: none;
+	height: 50px;
+	font-size: 15px;
+	margin-bottom: 20px;
+	color: rgb(173,173,173);
+	background: #f2f3f7;
+}
+
+#three textarea{
+	border: none;
+	resize: none;
+	color: rgb(173,173,173);
+	background: #f2f3f7;
+}
+
+#abtn{
+	position: fixed;
+	bottom: 100px;
+	right: 20%;
 }

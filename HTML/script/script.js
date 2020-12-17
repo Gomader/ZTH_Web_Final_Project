@@ -198,3 +198,129 @@ function change(id){
 	var changed = prompt("Change",inner);
 	document.getElementById(id).innerText = changed;
 }
+
+function uploadimage(){
+	document.getElementById("chooseImage").click();
+}
+
+function showImage(obj){
+	var img = getObjectURL(obj.files[0]);
+	document.getElementById("productImage").style.display="none";
+	document.getElementById("pic").style.display = "block";
+	document.getElementById("picImage").src = img;
+}
+
+function getObjectURL(file) {
+	var url = null ;
+	if(window.createObjectURL!=undefined) {
+		url = window.createObjectURL(file) ;
+	}else if(window.URL!=undefined) {
+		url = window.URL.createObjectURL(file) ;
+	}else if(window.webkitURL!=undefined) {
+		url = window.webkitURL.createObjectURL(file) ;
+	}
+	return url ;
+}
+
+function selectSellType(id){
+	var status = document.getElementById(id).checked;
+	if(id=="flea"&&status==true){
+		document.getElementById("auction").checked = false;
+		document.getElementById("endtime").style.display = "none";
+	}else if(id=="auction"&&status==true){
+		document.getElementById("flea").checked=false;
+		document.getElementById("endtime").style.display="block";
+	}else{
+		document.getElementById("endtime").style.display="none";
+	}
+}
+
+function showaddpage(){
+	if(document.getElementById("uploadtable").style.display=="none"){
+		document.getElementById("uploadtable").style.display = "block";
+	}else{
+		document.getElementById("uploadtable").style.display = "none";
+	}
+	
+}
+
+function submitProduct(){
+	var img = document.getElementById("chooseImage").files[0];
+	var productname = document.getElementById("productName").value;
+	var price = document.getElementById("productPrice").value;
+	var sellerName = document.getElementById("sellerName").value;
+	var sellerPhone = document.getElementById("sellerPhone").value;
+	var address = document.getElementById("address").value;
+	if(document.getElementById("flea").checked==true){
+		var type = "0";
+	}else if(document.getElementById("auction").checked==true){
+		var type = "1";
+	}else{
+		var type = "-1"
+	}
+	if(img==undefined || productname=="" || price=="" || sellerName=="" || sellerName=="" || sellerPhone=="" || address=="" || type=="-1"){
+		alert("Please Complete Your Product Information!");
+		return;
+	}
+	var fd = new FormData();
+	fd.append("img",img);
+	fd.append("productname",productname);
+	fd.append("price",price);
+	fd.append("sellerName",sellerName);
+	fd.append("sellerPhone",sellerPhone);
+	fd.append("address",address);
+	fd.append("type",type);
+	if(type==1){
+		var endtime = document.getElementById("endtimeitem").value;
+		fd.append("endtime",endtime);
+	}
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","php/uploadProduct.php",true);
+	xhr.send(fd);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState===4){
+			if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
+				console.log(xhr.responseText);
+				if(xhr.responseText=="1"){
+					alert("Upload Succeed!");
+					location.reload();
+				}else{
+					alert("Something Wrong!");
+				}
+			}
+		}
+	}
+}
+
+
+function submitconect(){
+	var name = document.getElementById("contentname").value;
+	var email = document.getElementById("contentemail").value;
+	if(document.getElementById("type").value=="buyer"){
+		var type = "2";
+	}else if(document.getElementById("type").value=="seller"){
+		var type = "1";
+	}else{
+		alert("Please Enter Correct Type!");
+		return;
+	}
+	
+	var inner = document.getElementById("inner").value;
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","php/uploadConect.php",true);
+	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xhr.send("name="+name+"&email="+email+"&type="+type+"&inner="+inner);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState===4){
+			if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
+				console.log(xhr.responseText);
+				if(xhr.responseText=="1"){
+					alert("Send Succeed!");
+					location.reload();
+				}else{
+					alert("Something Wrong!");
+				}
+			}
+		}
+	}
+}
