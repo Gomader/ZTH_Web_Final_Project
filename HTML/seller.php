@@ -71,21 +71,25 @@
 						echo "<tr><td>".$row["name"]."</td><td>";
 						$addprice = 0;
 						$user = "";
-						while($r = $dataInfor->fetch_assoc()){
-							$addprice = $r["addprice"];
-							$user = $r["username"];
-							break;
-						}
-						echo "$addprice</td><td>$user</td><td>$status</td><td>";
-						while($r = $dataInfortemp->fetch_assoc()){
-							echo "<span>".$r["username"].":".$r["time"]."</span><br>";
+						if($dataInfor->num_rows>0){
+							while($r = $dataInfor->fetch_assoc()){
+								$addprice = $r["addprice"];
+								$user = $r["username"];
+								break;
+							}
+							echo "$addprice</td><td>$user</td><td>$status</td><td>";
+							while($r = $dataInfortemp->fetch_assoc()){
+								echo "<span>".$r["username"].":".$r["time"]."</span><br>";
+							}
+						}else{
+							echo $row["price"]."</td><td>$user</td><td>$status</td><td>";
 						}
 						echo "</td></tr>";
 					}
 					
 				}
 			}else{
-				echo "<tr><td colspan=5 style='test-align:center'>No Data</td></tr>";
+				echo "<tr><td colspan='5' style='text-align:center'>No Data</td></tr>";
 			}
 				
 			echo "</table></div>
