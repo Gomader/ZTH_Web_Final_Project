@@ -3,6 +3,7 @@ drop table user;
 drop table product;
 drop table action;
 drop table conect;
+drop table cart;
 create table user(
 	id int(11) auto_increment primary key,
     username varchar(20) not null,
@@ -51,11 +52,9 @@ create table cart(
 	id int(11) auto_increment primary key,
     userid int(11) not null,
     productid int(11) not null,
+    addtime timestamp default current_timestamp,
     foreign key(userid) references WebProject.user(id),
     foreign key(productid) references WebProject.product(id)
 )engine MyISAM;
 
 insert into user(username,password,type) values("admin","admin",0),("test1","abc123",1),("test2","abc123",2);
-insert into product(name,sellerid,price,type) value("watch",2,2000,0);
-insert into product(name,sellerid,price,type,endtime) value("apple watch",2,1000,1,date_add(now(),interval 1 day));
-insert into action(productid,bidderid,addprice) values(2,3,2000),(2,3,2500);

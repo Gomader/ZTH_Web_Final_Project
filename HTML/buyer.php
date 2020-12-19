@@ -91,9 +91,9 @@
 			require_once "admin/admin.php";
 			$conn = new mysqli($hn,$un,$pw,$db);
 			if($conn->connect_error) die($conn->connect_error);
-			$query = "select product.id as id,name,type,price,address,sellerphone,sellername,buyerid from cart left join product on product.id=cart.productid where cart.userid=".$_SESSION["id"];
+			$query = "select product.id as id,name,type,price,address,sellerphone,sellername,buyerid,endtime from cart left join product on product.id=cart.productid where cart.userid=".$_SESSION["id"]." order by id desc";
 			$res = $conn->query($query);
-			if($res->num_rows == 1){
+			if($res->num_rows > 0){
 				while($row = $res->fetch_assoc()){
 					echo "<tr><td><a href='buyer.php?turn=4?id=".$row["id"]."'>".$row["name"]."</a></td><td>";
 					if($row["type"]=="1"){
@@ -120,10 +120,55 @@
 							$status = "End Bidding";
 						}
 					}
-					echo "</td><td>".$row["address"]."</td><td>".$row["sellerphone"]."</td><td>$status</td><td>".$row["sellername"]."</td></tr></table>";
+					echo "</td><td>".$row["address"]."</td><td>".$row["sellerphone"]."</td><td>$status</td><td>".$row["sellername"]."</td></tr>";
 				}
+			}else{
+				echo "<tr><td colspan='6' style='text-align:center'>No Data</td></tr>";
 			}
-			echo "</div>";
+			echo "</table></div>";
+			echo "
+			<div class='tablesbox'>
+				<h1>Bought</h1>
+				<table class='thistable' rules='none'>
+					<tr><th>Product Name</th><th>Current Price</th><th>Trading Place</th><th>Phone Number</th><th>Status</th><th>Seller Name</th></tr>";
+			require_once "admin/admin.php";
+			$conn = new mysqli($hn,$un,$pw,$db);
+			if($conn->connect_error) die($conn->connect_error);
+			$query = "select product.id as id,name,type,price,address,sellerphone,sellername,buyerid,endtime from product where buyerid=".$_SESSION["id"]." order by id desc";
+			$res = $conn->query($query);
+			if($res->num_rows > 0){
+				while($row = $res->fetch_assoc()){
+					echo "<tr><td><a href='buyer.php?turn=4?id=".$row["id"]."'>".$row["name"]."</a></td><td>";
+					if($row["type"]=="1"){
+						$qry = "select addprice from action where productid=".$row["id"]." order by addprice desc limit 1;";
+						$r = $conn->query($qry);
+						if($r->num_rows>0){
+							while($l = $r->fetch_assoc()){
+								echo $l["addprice"];
+							}
+						}else{
+							echo $row["price"];
+						}
+					}else{
+						echo $row["price"];
+					}
+					if($row["type"] == 0){
+						$status = "Selling";
+						if($row["buyerid"]!=-1){
+							$status = "Sold";
+						}
+					}else{
+						$status = "Bidding";
+						if($row["endtime"]>time()){
+							$status = "End Bidding";
+						}
+					}
+					echo "</td><td>".$row["address"]."</td><td>".$row["sellerphone"]."</td><td>$status</td><td>".$row["sellername"]."</td></tr>";
+				}
+			}else{
+				echo "<tr><td colspan='6' style='text-align:center'>No Data</td></tr>";
+			}
+			echo "</table></div>";
 		}elseif($_GET["turn"]=="4"){
 			$id = $_GET["id"];
 			require_once "admin/admin.php";
@@ -172,7 +217,7 @@
 		</div>
 		<script src="script/script.js" type="text/javascript" charset="utf-8"></script>
 		<?php
-		if($_GET["turn"]=="4"){
+		if(isset($_GET["turn"])&&$_GET["turn"]=="4"){
 			$id = $_GET["id"];
 			require_once "admin/admin.php";
 			$conn = new mysqli($hn,$un,$pw,$db);
