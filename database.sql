@@ -21,6 +21,7 @@ create table product(
     endprice int(11) default 0,
     type tinyint(1),
     sellerphone int(20),
+    sellername varchar(20),
     address varchar(50),
     addtime timestamp default current_timestamp,
     endtime timestamp,
@@ -44,6 +45,14 @@ create table conect(
     email varchar(30),
     usertype int(1),
     message varchar(100)
+)engine MyISAM;
+
+create table cart(
+	id int(11) auto_increment primary key,
+    userid int(11) not null,
+    productid int(11) not null,
+    foreign key(userid) references WebProject.user(id),
+    foreign key(productid) references WebProject.product(id)
 )engine MyISAM;
 
 insert into user(username,password,type) values("admin","admin",0),("test1","abc123",1),("test2","abc123",2);

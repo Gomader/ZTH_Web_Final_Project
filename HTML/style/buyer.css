@@ -152,6 +152,7 @@
 	background: url(../image/search.png) center center;
 	background-size: 100% 100%;
 	margin-left: 200px;
+	border: none;
 }
 
 #searchingSeller,
@@ -214,4 +215,66 @@ td{
 	color: rgb(158,158,158);
 	font-size: 17px;
 	font-weight: 100;
+}
+
+#mianbox{
+	width: 50%;
+	margin: 200px auto;
+}
+
+#mianbox img{
+	width: 400px;
+	height: 400px;
+	float: left;
+}
+
+#mainboxtable{
+	width: auto;
+	float: left;
+}
+
+#mainboxtable td{
+	font-size: 20px;
+	color: #000000;
+	font-weight: normal;
+}
+
+#remaintime{
+	color: #C5312D;
+	font-weight: bolder;
+}
+
+#newprice{
+	height: 30px;
+	font-size: 13px;
+}
+
+.tablesbox{
+	width: 60%;
+	margin: 100px auto;
+	margin-bottom: 100px;
+}
+
+.thistable{
+	width: 100%;
+	text-align: left;
+	box-shadow: grey 0 0 10px;
+	border-radius: 10px;
+	line-height: 64px;
+}
+
+.thistable th:first-child{
+	border-radius: 10px 0 0 0;
+}
+
+.thistable th:last-child{
+	border-radius: 0 10px 0 0;
+}
+
+.thistable tr:nth-child(even){
+	background: #f8f7ff;
+}
+
+.thistable tr:nth-child(odd){
+	background: #ffffff;
 }

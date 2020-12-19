@@ -26,7 +26,20 @@ if($userInfo->num_rows > 0){
 				$status = "End Bidding";
 			}
 		}
-		$data = "[".$row["id"].",'".$row["name"]."',".$row["price"].",'".$row["address"]."','".$row["sellerphone"]."','$status','".$row["username"]."'],";
+		if($row["type"]==1){
+			$qry = "select addprice from action where productid=".$row["id"]." order by addprice desc limit 1;";
+			$res = $conn->query($qry);
+			if($res->num_rows==1){
+				while($r = $res->fetch_assoc()){
+					$price = $r["addprice"];
+				}
+			}else{
+				$price = $row["price"];
+			}
+		}else{
+			$price = $row["price"];
+		}
+		$data = "[".$row["id"].",'".$row["name"]."',$price,'".$row["address"]."','".$row["sellerphone"]."','$status','".$row["username"]."'],";
 		$inner = $inner . $data;
 	}
 	$inner = $inner."]";

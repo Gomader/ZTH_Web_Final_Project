@@ -380,3 +380,63 @@ function searching(type){
 		}
 	}
 }
+
+function addBidInformation(oldprice,id){
+	var price = document.getElementById("newprice").value;
+	if(price < oldprice){
+		alert("Poor man, spend more money!");
+		return;
+	}
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","php/addbid.php",true);
+	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xhr.send("id="+id+"&price="+price);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState===4){
+			if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
+				if(xhr.responseText=="1"){
+					alert("Bid Succeed!");
+				}else{
+					alert("Something Wrong!");
+				}
+			}
+		}
+	}
+}
+
+function addtoCart(id){
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","php/addtoCart.php",true);
+	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xhr.send("id="+id);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState===4){
+			if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
+				if(xhr.responseText=="1"){
+					alert("It's waiting you in your Cart!");
+				}else{
+					alert("Something Wrong!");
+				}
+			}
+		}
+	}
+}
+
+function buyProduct(id){
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST","php/buyProduct.php",true);
+	xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+	xhr.send("id="+id);
+	xhr.onreadystatechange = function(){
+		if(xhr.readyState===4){
+			if (xhr.readyState == 4 && (xhr.status >= 200 && xhr.status < 400)){
+				console.log(xhr.responseText);
+				if(xhr.responseText=="1"){
+					alert("Succeed!");
+				}else{
+					alert("Something Wrong!");
+				}
+			}
+		}
+	}
+}
