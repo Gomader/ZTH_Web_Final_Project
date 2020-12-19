@@ -19,10 +19,10 @@ if(move_uploaded_file($img,$path.$name)){
 	$conn = new mysqli($hn,$un,$pw,$db);
 	if($conn->connect_error) die($conn->connect_error);
 	if($type == "1"){
-		$query = "insert into product(name,pic,sellerid,price,address,sellerphone,sellername,type,endtime) value('$productname','$name',$id,$price,'$address',$sellerPhone,$sellerName,$type,data_add(now(),interval $endtime day))";
+		$query = "insert into product(name,pic,sellerid,price,address,sellerphone,sellername,type,endtime) value('$productname','$name',$id,$price,'$address','$sellerPhone','$sellerName',$type,date_add(now(),interval $endtime day))";
 		$res = $conn->query($query);
 	}else{
-		$query = "insert into product(name,pic,sellerid,price,address,sellerphone,type) value('$productname','$name',$id,$price,'$address',$sellerPhone,$type)";
+		$query = "insert into product(name,pic,sellerid,price,address,sellerphone,sellername,type) value('$productname','$name',$id,$price,'$address','$sellerPhone','$sellerName',$type)";
 		$res = $conn->query($query);
 	}
 	if(!$res){

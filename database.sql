@@ -21,7 +21,7 @@ create table product(
     price int(11) default 0,
     endprice int(11) default 0,
     type tinyint(1),
-    sellerphone int(20),
+    sellerphone varchar(20),
     sellername varchar(20),
     address varchar(50),
     addtime timestamp default current_timestamp,

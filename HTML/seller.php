@@ -85,7 +85,7 @@
 					
 				}
 			}else{
-				echo "<tr><td colspan=5>No Data</td></tr>";
+				echo "<tr><td colspan=5 style='test-align:center'>No Data</td></tr>";
 			}
 				
 			echo "</table></div>
