@@ -193,6 +193,9 @@
 								$cprice = $r["addprice"];
 								echo "<tr><td><label>Current Price:</label></td><td>".$r["addprice"]."</td></tr>";
 							}
+						}else{
+							echo "<tr><td><label>Current Price:</label></td><td>".$row["price"]."</td></tr>";
+							$cprice = $row["price"];
 						}
 					}else{
 						echo "<tr><td colspan='2'><span style='font-weight:bolder;color:rgb(64,67,235)'>".$row["price"]." won</label></td></tr>";
